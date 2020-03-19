@@ -1,0 +1,26 @@
+{
+    "name": "QiZhiHang/weixinpay",
+    "description": "my name is qzh,myweixinpay",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "QZH",
+            "email": "1360313409@qq.com"
+        }
+    ],
+    "minimum-stability": "RC",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wxpay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wxpay\\": "src/"
+        }
+    }
+}
