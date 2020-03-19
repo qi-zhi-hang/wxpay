@@ -34,6 +34,11 @@ class Wxpay
         return $data;
     }
 
+    /**
+     * xml转array
+     * @param $xml
+     * @return mixed
+     */
     private function xml($xml)
     {
 
@@ -43,6 +48,10 @@ class Wxpay
 
     }
 
+    /**
+     * 生成随机字符串
+     * @return string
+     */
     private function nonce_str(){
         $result = '';
         $str = 'QWERTYUIOPASDFGHJKLZXVBNMqwertyuioplkjhgfdsamnbvcxz';
@@ -53,10 +62,21 @@ class Wxpay
 
     }
 
+    /**
+     * 生成订单号
+     * @param $openid
+     * @return string
+     */
     private function order_num($openid)
     {
         return md5($openid.time().rand(100,999));
     }
+
+    /**
+     * 获取签名
+     * @param $data
+     * @return string
+     */
     private function sign($data)
     {
         $stringA = '';
@@ -72,6 +92,15 @@ class Wxpay
         $stringSignTemp  = $stringA.'&key='.$wx_key;
         return strtoupper(md5($stringSignTemp));
     }
+
+    /**
+     * 实现微信支付功能
+     * @param int $total_fee
+     * @param $body
+     * @param $openid
+     * @param $ip
+     * @return array
+     */
     public function wxpay($total_fee=0,$body,$openid,$ip)
     {
         $post = [];
