@@ -6,7 +6,7 @@ class Wxpay
     const APPID = "";
     const MCHKEY = "";
     /**
-     * 通过post方式获取资源v1.1.
+     * 通过post方式获取资源v1.1. 修改测试环境
      * @param $url
      * @param $data
      * @return bool|string
